@@ -8,6 +8,7 @@ const cormorant = Cormorant_Garamond({
   weight: ["300", "400", "500", "600", "700"],
   style: ["normal", "italic"],
   display: "swap",
+
 });
 
 const jakarta = Plus_Jakarta_Sans({
