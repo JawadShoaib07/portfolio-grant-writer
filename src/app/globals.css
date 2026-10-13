@@ -1,26 +1,124 @@
 @import "tailwindcss";
 
+@theme {
+  --font-serif: var(--font-cormorant), "Playfair Display", Georgia, serif;
+  --font-sans: var(--font-jakarta), system-ui, -apple-system, sans-serif;
+  --color-gold-200: #faeed1;
+  --color-gold-300: #f4dc9e;
+  --color-gold-400: #e7c56e;
+  --color-gold-500: #d4af37;
+  --color-gold-600: #b08d24;
+  --color-gold-700: #8b6d19;
+  --color-charcoal-950: #050608;
+  --color-charcoal-900: #0a0b0f;
+  --color-charcoal-800: #12141c;
+  --color-charcoal-700: #1b1e2a;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #07080b;
+  --foreground: #f0f2f7;
+  --gold-primary: #d4af37;
+  --gold-light: #f7e7b4;
+  --gold-dark: #9e7d23;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #07080b;
+  color: #e5e7eb;
+  font-family: var(--font-jakarta), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .font-serif {
+  font-family: var(--font-cormorant), Georgia, serif;
+}
+
+/* Custom luxury gradients and effects */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #faeed1 0%, #e7c56e 40%, #d4af37 70%, #aa8222 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-subtle {
+  background: linear-gradient(135deg, #ffffff 20%, #faeed1 60%, #e7c56e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.luxury-card {
+  background: linear-gradient(135deg, rgba(22, 25, 35, 0.7) 0%, rgba(12, 14, 20, 0.85) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+}
+
+.luxury-card-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.luxury-card-hover:hover {
+  border-color: rgba(212, 175, 55, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 24px 50px -12px rgba(212, 175, 55, 0.15), inset 0 1px 0 0 rgba(212, 175, 55, 0.2);
+}
+
+.gold-button {
+  background: linear-gradient(135deg, #e7c56e 0%, #d4af37 50%, #b08d24 100%);
+  color: #07080b;
+  font-weight: 600;
+  box-shadow: 0 8px 24px -6px rgba(212, 175, 55, 0.35);
+  transition: all 0.3s ease;
+}
+
+.gold-button:hover {
+  background: linear-gradient(135deg, #faeed1 0%, #e7c56e 50%, #c49d2b 100%);
+  box-shadow: 0 12px 30px -4px rgba(212, 175, 55, 0.5);
+  transform: translateY(-2px);
+}
+
+.gold-button-outline {
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  color: #faeed1;
+  background: rgba(212, 175, 55, 0.04);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+.gold-button-outline:hover {
+  border-color: rgba(212, 175, 55, 0.8);
+  background: rgba(212, 175, 55, 0.12);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Subtle luxury noise/grid background overlay */
+.bg-mesh-pattern {
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.07) 0%, transparent 65%),
+    radial-gradient(circle at 100% 50%, rgba(180, 140, 45, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 0% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+}
+
+.gold-badge {
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  color: #f4dc9e;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #07080b;
+}
+::-webkit-scrollbar-thumb {
+  background: #232733;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d4af37;
 }
