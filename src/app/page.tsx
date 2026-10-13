@@ -27,7 +27,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-[#07080b] text-[#f0f2f7] flex flex-col selection:bg-[#d4af37]/30 selection:text-[#faeed1]">
+    <div className="min-h-screen w-full max-w-[100vw] overflow-x-hidden bg-[#07080b] text-[#f0f2f7] flex flex-col selection:bg-[#d4af37]/30 selection:text-[#faeed1]">
       {/* Navigation */}
       <Navbar onOpenConsultation={handleOpenConsultation} />
 
